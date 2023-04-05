@@ -126,10 +126,10 @@ const Header = () => {
   
       emailjs
         .sendForm(
-         /*your service id */      
-          /*your template id */  
+          "service_zs4pske",     
+          "template_0tmhacr",  
           form.current,
-          /*account id*/
+          "cfB8DfUleyV_ZFNWy"
         )
         .then(
           (result) => {
