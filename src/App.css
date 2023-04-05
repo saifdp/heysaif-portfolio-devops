@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Kalam:wght@700&family=Oswald&display=swap');
 body {
   overflow-x: hidden;
 }
@@ -54,6 +55,5 @@ body {
 
  .navbar-brand P{
   color: white;
+  font-family: 'Caveat', cursive;
  }
-
- 

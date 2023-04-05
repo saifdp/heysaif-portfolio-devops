@@ -50,13 +50,13 @@ import { AiFillLinkedin } from 'react-icons/ai';
 // import OwlCarousel from 'react-owl-carousel';
 // import 'owl.carousel/dist/assets/owl.carousel.css';
 // import 'owl.carousel/dist/assets/owl.theme.default.css';
-import { useState } from 'react';
+import { useState,useRef } from 'react';
 import { useSpring, animated } from 'react-spring';
 import { HashLink } from 'react-router-hash-link';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import "../components/sourabh.pdf"
-
+ 
+import emailjs from "@emailjs/browser";
 const Header = () => {
 
     AOS.init({
@@ -113,18 +113,45 @@ const Header = () => {
         config: { duration: 2000 },
     });
 
-    const handleDownload = () => {
-        // Replace "cv.pdf" with the name of your CV file
-        const url = '../components/sourabh.pdf';
-        const link = document.createElement('a');
-        link.href = url;
-        link.setAttribute('download', 'sourabh.pdf');
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
+    
+
+
+
+    /*your email message starts here*/
+
+    const form = useRef();
+
+    const sendEmail = (e) => {
+      e.preventDefault();
+  
+      emailjs
+        .sendForm(
+         /*your service id */      
+          /*your template id */  
+          form.current,
+          /*account id*/
+        )
+        .then(
+          (result) => {
+            console.log(result.text);
+            console.log("message sent");
+          },
+          (error) => {
+            console.log(error.text);
+          }
+        );
     };
 
 
+    const onSubmit = () => {
+             
+              alert("Message Sent Sucessfully");
+              setTimeout(function () {
+                window.location.reload();
+              }, 1000);
+          
+          
+      };
 
 
     return (
@@ -149,14 +176,10 @@ const Header = () => {
 
                                     <animated.div style={animation} className="desricption_text">
                                         <div class="typewriter">
-                                            <h1>I Build The Things for Web...!</h1>
+                                            <h1>I build things for Web...!</h1>
                                         </div>
                                     </animated.div>
-                                    <div className='new_button'>
-
-                                        <button onClick={handleDownload}>Download CV</button>
-
-                                    </div>
+                        
 
                                     <div className='tags'>
                                         <div className='row'>
@@ -639,7 +662,7 @@ const Header = () => {
                                             <div className='col-lg-4 col-sm-4 col-4'>
                                                 <div className='text_class' data-aos="fade-up" data-aos-duration="2000">
                                                 <img src={ansible } className="img-fluid " alt="loading..." /> 
-                                            <p className='text'>ansible</p>
+                                            <p className='text'>Ansible</p>
                                                 </div>
                                          
                                             </div>
@@ -647,79 +670,79 @@ const Header = () => {
                                             <div className='col-lg-4 col-sm-4 col-4'>
                                             <div className='text_class'data-aos="fade-up" data-aos-duration="2000">
                                             <img src={aws  } className="img-fluid " alt="loading..." />   
-                                            <p className='text'>aws</p>  
+                                            <p className='text'>AWS</p>  
                                             </div>
                                             </div>
                                             <div className='col-lg-4 col-sm-4 col-4'>
                                             <div className='text_class'data-aos="fade-up" data-aos-duration="2000">
                                             <img src={docker  } className="img-fluid " alt="loading..." />  
-                                            <p className='text'>docker</p>   
+                                            <p className='text'>Docker</p>   
                                             </div>
                                             </div>
                                             <div className='col-lg-4 col-sm-4 col-4'>
                                             <div className='text_class'data-aos="fade-up" data-aos-duration="2000">
                                             <img src={git  } className="img-fluid " alt="loading..." />  
-                                            <p className='text'>git</p>  
+                                            <p className='text'>Git</p>  
                                             </div>
                                             </div>
                                             <div className='col-lg-4 col-sm-4 col-4'>
                                             <div className='text_class'data-aos="fade-up" data-aos-duration="2000">
                                             <img src={jenkins   } className="img-fluid " alt="loading..." /> 
-                                            <p className='text'>jenkins</p>    
+                                            <p className='text'>Jenkins</p>    
                                             </div>
                                             </div>
                                             <div className='col-lg-4 col-sm-4 col-4'>
                                             <div className='text_class'data-aos="fade-up" data-aos-duration="2000">
                                             <img src={js   } className="img-fluid " alt="loading..." />  
-                                            <p className='text'>js</p>    
+                                            <p className='text'>JS</p>    
                                             </div>
                                             </div>
                                             <div className='col-lg-4 col-sm-4 col-4'>
                                             <div className='text_class'data-aos="fade-up" data-aos-duration="2000">
                                             <img src={kubernetes   } className="img-fluid " alt="loading..." />
-                                            <p className='text' id='tt'>kuber</p> 
+                                            <p className='text' id='tt'>Kubernetes</p> 
                                             </div>     
                                             </div>
                                              <div className='col-lg-4 col-sm-4 col-4'>
                                              <div className='text_class'data-aos="fade-up" data-aos-duration="2000">
                                             <img src={nexus   } className="img-fluid " alt="loading..." /> 
-                                            <p className='text'>nexus</p>  
+                                            <p className='text'>Nexus</p>  
                                             </div>   
                                             </div>
                                             <div className='col-lg-4 col-sm-4 col-4'>
                                             <div className='text_class'data-aos="fade-up" data-aos-duration="2000">
                                             <img src={python    } className="img-fluid " alt="loading..." /> 
-                                            <p className='text'>python</p>     
+                                            <p className='text'>Python</p>     
                                             </div>
                                             </div>
                                             <div className='col-lg-4 col-sm-4 col-4'>
                                             <div className='text_class'data-aos="fade-up" data-aos-duration="2000">
                                             <img src={react    } className="img-fluid " alt="loading..." />   
-                                            <p className='text'>react</p>
+                                            <p className='text'>React</p>
                                             </div>   
                                             </div>
                                             <div className='col-lg-4 col-sm-4 col-4'>
                                             <div className='text_class'data-aos="fade-up" data-aos-duration="2000">
                                             <img src={sonar    } className="img-fluid " alt="loading..." />  
-                                            <p className='text'>sonar</p>    
+                                            <p className='text'>Sonar</p>    
                                             </div>
                                             </div>
                                             <div className='col-lg-4 col-sm-4 col-4'>
                                             <div className='text_class'data-aos="fade-up" data-aos-duration="2000">
                                             <img src={terraform     } className="img-fluid " alt="loading..." />
-                                            <p className='text'>terraform</p>      
+                                            <p className='text'>Terraform</p>      
                                             </div>
                                             </div>
                                             <div className='col-lg-4 col-sm-4 col-4' >
                                             <div className='text_class'data-aos="fade-up" data-aos-duration="2000">
                                             <img src={figma} className="img-fluid " alt="loading..." />  
-                                            <p className='text'>figma</p>   
+                                            <p className='text'>Figma</p>   
                                             </div> 
                                             </div>
                                             <div className='col-lg-4 col-sm-4 col-4'>
                                             <div className='text_class'data-aos="fade-up" data-aos-duration="2000">
                                             <img src={java2 } className="img-fluid " alt="loading..." />     
-                                            <p className='text'>java2</p> 
+                                            <p className='text'>Java</p> 
                                             </div>
                                             </div>
                                          </div>
@@ -778,14 +801,14 @@ const Header = () => {
                             <div className='row'>
                                 <div className='col-lg-6'>
                                     <div className='send_msg'>
-                                        <form id="myForm" onsubmit="myFunction()">
+                                    <form ref={form} onSubmit={sendEmail}>
 
                                             <div class="form-group row " data-aos="fade-up"
                                                 data-aos-duration="3000">
 
                                                 <div class="col-sm-10">
                                                     <input type="Full Name" class="form-control" id="fullName"
-                                                        placeholder="Full Name" name="fullName" required />
+                                                        placeholder="Full Name" name="user_name" required />
                                                 </div>
                                             </div>
 
@@ -796,7 +819,7 @@ const Header = () => {
 
                                                 <div class="col-sm-10">
                                                     <input type="text" class="form-control" id="education"
-                                                        placeholder="Email" name="education" required />
+                                                        placeholder="Email"name="user_email" required />
                                                 </div>
                                             </div>
                                             <div class="form-group row mt-2" data-aos="fade-up"
@@ -816,7 +839,7 @@ const Header = () => {
 
                                                 <div class="col-lg-10">
 
-                                                    <button type="submit" class="btn btn-warning">Submit</button>
+                                                    <button type="submit"  value="Send" class="btn btn-warning" onClick={onSubmit}>Submit</button>
                                                 </div>
                                             </div>
 
@@ -853,7 +876,7 @@ const Header = () => {
                                                 </div>
                                                 <div className='col-lg-1 col-3'>
                                                     <div className='twitter'>
-                                                        <Link to='https://www.twitter.com/saifdp'>
+                                                        <Link to='https://www.twitter.com/saifdp_'>
                                                             <AiOutlineTwitter />
                                                         </Link>
 
@@ -918,4 +941,4 @@ const Header = () => {
     )
 }
 
-export default Header  
+export default Header
