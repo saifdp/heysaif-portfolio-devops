@@ -1,0 +1,59 @@
+body {
+  overflow-x: hidden;
+}
+
+.parent_block {
+  max-width: 1350px;
+  margin: 0 auto;
+  
+}
+
+.navbar {
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  width:100%;
+  z-index:99;
+  background: #393E46;
+}
+
+.mypage {
+  background-color: #393E46;
+  
+  
+}
+
+  .navbar-nav {
+    margin-left: auto;
+
+}
+
+.navbar-brand img {
+  width: 250px;
+  
+}
+
+.navbar-nav > li > a {
+  margin-right: 0.7rem;
+  margin-left: 0.7rem;
+}
+
+/* .navbar-nav > li > a.active, .navbar-nav > li > a.active:focus {
+ border-bottom: 0.1875rem solid orange;
+} */
+
+/* .navbar-nav > li > a:hover {
+  border-bottom: 0.1875rem solid orange;
+ } */
+
+
+   .nav-link{ 
+  color: white;
+ }
+
+ .navbar-brand P{
+  color: white;
+ }
+
+ 
