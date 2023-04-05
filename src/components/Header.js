@@ -170,7 +170,7 @@ const Header = () => {
                                     <div className="welcome_text" data-aos="fade-up" data-aos-duration="2000" >
                                         <p>
                                             Hey There,<br />
-                                            I’m Saif</p>
+                                            I’m Saif.</p>
                                     </div>
 
 
@@ -195,7 +195,7 @@ const Header = () => {
 
                                             <div className='col-lg-3 col-3'>
                                                 <div className='twitter' data-aos="zoom-in" data-aos-duration="2000">
-                                                    <Link to='https://www.twitter.com/saifdp'>
+                                                    <Link to='https://www.twitter.com/saifdp_'>
                                                         <AiOutlineTwitter />
                                                     </Link>
 
@@ -554,7 +554,7 @@ const Header = () => {
 
                                         </Card.Body>
                                         <div className='githubs'>
-                                            <Link to='https://www.github.com/saifdp'>
+                                            <Link to='https://github.com/saifdp/travel-guide'>
                                                 <AiFillGithub />
                                             </Link>
                                         </div>
@@ -576,7 +576,7 @@ const Header = () => {
 
                                         </Card.Body>
                                         <div className='githubs'>
-                                            <Link to='https://www.github.com/saifdp'>
+                                            <Link to='https://github.com/saifdp/virtual-drawing'>
                                                 <AiFillGithub />
                                             </Link>
                                         </div>
@@ -599,7 +599,7 @@ const Header = () => {
 
                                         </Card.Body>
                                         <div className='githubs'>
-                                            <Link to='https://www.github.com/saifdp'>
+                                            <Link to='https://github.com/saifdp/weather-react'>
                                                 <AiFillGithub />
                                             </Link>
                                         </div>
@@ -622,7 +622,7 @@ const Header = () => {
 
                                         </Card.Body>
                                         <div className='githubs'>
-                                            <Link to='https://www.github.com/saifdp'>
+                                            <Link to='https://github.com/saifdp/quake-check'>
                                                 <AiFillGithub />
                                             </Link>
                                         </div>
