@@ -908,7 +908,7 @@ const Header = () => {
                                     <div className='col-lg-3'>
                                         <div className='drop_text'>
                                             <p>
-                                                ©2024 HEYSAIF.COM <br />
+                                                ©2025 HEYSAIF.COM <br />
                                                 ALL RIGHTS RESERVED
                                             </p>
                                         </div>
