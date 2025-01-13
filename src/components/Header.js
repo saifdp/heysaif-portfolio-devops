@@ -213,7 +213,7 @@ const Header = () => {
                                             <div className='col-lg-3 col-3'>
                                                 <div className='link' data-aos="zoom-in" data-aos-duration="2000">
 
-                                                    <Link to='https://www.linkedin.com/in/heysaif'>
+                                                    <Link to='https://www.linkedin.com/in/saifdvg'>
                                                         <AiFillLinkedin />
                                                     </Link>
 
@@ -894,7 +894,7 @@ const Header = () => {
                                                 <div className='col-lg-1 col-1' >
                                                     <div className='link'>
 
-                                                        <Link to='https://www.linkedin.com/in/heysaif'>
+                                                        <Link to='https://www.linkedin.com/in/saifdvg'>
                                                             <AiFillLinkedin />
                                                         </Link>
 
