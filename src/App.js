@@ -1,41 +1,23 @@
- 
-import './App.css';
+ import './App.css';
 import {
   BrowserRouter as Router,
   Route,
   Routes,
 } from "react-router-dom";
  
-import Navbar from './components/Navbar';
-import Header from './components/Header';
-import Contact from './components/Contact';
-
-
+import ModernNavbar from './components/ModernNavbar';
+import ModernHeader from './components/ModernHeader';
 
 function App() {
-
-  
-
   return (
-   
-    
- 
     <Router>
-      <Navbar />
-      <Routes>
-        <Route exact path='/' element={<Header />}></Route>
-        {/* <Route exact path='/services' element={<Services />}></Route>
-        <Route exact path='/About' element={< About />}></Route>
-        
-        <Route exact path='/Carrers' element={< Carrers />}></Route> */}
-   
-   
-      </Routes>
-     
-    
+      <div className="min-h-screen">
+        <ModernNavbar />
+        <Routes>
+          <Route exact path='/' element={<ModernHeader />}></Route>
+        </Routes>
+      </div>
     </Router>
-
-
   );
 }
 

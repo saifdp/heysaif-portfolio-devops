@@ -1,60 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Kalam:wght@700&family=Oswald&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
 body {
   overflow-x: hidden;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
 }
 
-.parent_block {
-  max-width: 1350px;
-  margin: 0 auto;
-  
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.navbar {
-  position:fixed;
-  top:0;
-  left:0;
-  right:0;
-  width:100%;
-  z-index:99;
-  background: #393E46;
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
 }
-
-.mypage {
-  background-color: #393E46;
-  
-  
-}
-
-  .navbar-nav {
-    margin-left: auto;
-
-}
-
-.navbar-brand img {
-  width: 250px;
-  
-}
-
-.navbar-nav > li > a {
-  margin-right: 0.7rem;
-  margin-left: 0.7rem;
-}
-
-/* .navbar-nav > li > a.active, .navbar-nav > li > a.active:focus {
- border-bottom: 0.1875rem solid orange;
-} */
-
-/* .navbar-nav > li > a:hover {
-  border-bottom: 0.1875rem solid orange;
- } */
-
-
-   .nav-link{ 
-  color: white;
- }
-
- .navbar-brand P{
-  color: white;
-  font-family: 'Caveat', cursive;
-  font-size: 35px;
- }
