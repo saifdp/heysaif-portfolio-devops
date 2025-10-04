@@ -397,17 +397,13 @@ const ModernHeader = () => {
             className="text-center mb-16"
           >
             <h2 className="text-5xl md:text-6xl font-bold text-white mb-6">About Me</h2>
-            <motion.div 
-              className="w-20 h-1 bg-gradient-to-r from-cyan-500 to-blue-600 mx-auto rounded-full"
-              animate={{ scaleX: [1, 1.5, 1] }}
-              transition={{ duration: 2, repeat: Infinity }}
-            ></motion.div>
+            <div className="w-20 h-1 bg-gradient-to-r from-cyan-500 to-blue-600 mx-auto rounded-full"></div>
           </motion.div>
 
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               className="space-y-6"
             >
@@ -420,8 +416,8 @@ const ModernHeader = () => {
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               className="grid grid-cols-2 gap-6"
             >
@@ -433,16 +429,14 @@ const ModernHeader = () => {
               ].map((stat, index) => (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, scale: 0.5 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
                   viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  whileHover={{ scale: 1.1, y: -5 }}
-                  className="bg-gradient-to-br from-slate-800 to-slate-900 p-6 rounded-2xl text-center border border-cyan-500/20 hover:border-cyan-500 transition-all duration-300 relative overflow-hidden group"
+                  transition={{ delay: index * 0.05 }}
+                  className="bg-gradient-to-br from-slate-800 to-slate-900 p-6 rounded-2xl text-center border border-cyan-500/20 md:hover:border-cyan-500 transition-colors duration-300"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/0 via-cyan-500/10 to-cyan-500/0 group-hover:via-cyan-500/20 transition-all duration-500"></div>
-                  <div className="text-3xl font-bold text-cyan-400 relative z-10">{stat.number}</div>
-                  <div className="text-sm text-gray-400 mt-2 relative z-10">{stat.label}</div>
+                  <div className="text-3xl font-bold text-cyan-400">{stat.number}</div>
+                  <div className="text-sm text-gray-400 mt-2">{stat.label}</div>
                 </motion.div>
               ))}
             </motion.div>
@@ -462,11 +456,7 @@ const ModernHeader = () => {
             className="text-center mb-16"
           >
             <h2 className="text-5xl md:text-6xl font-bold text-white mb-6">Tech Arsenal</h2>
-            <motion.div 
-              className="w-20 h-1 bg-gradient-to-r from-cyan-500 to-blue-600 mx-auto rounded-full"
-              animate={{ scaleX: [1, 1.5, 1] }}
-              transition={{ duration: 2, repeat: Infinity }}
-            ></motion.div>
+            <div className="w-20 h-1 bg-gradient-to-r from-cyan-500 to-blue-600 mx-auto rounded-full"></div>
             <p className="text-xl text-gray-300 mt-6">DevOps & Cloud Technologies</p>
           </motion.div>
 
@@ -474,49 +464,27 @@ const ModernHeader = () => {
             {skills.map((skill, index) => (
               <motion.div
                 key={skill.name}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ 
-                  delay: index * 0.03,
-                  duration: 0.4,
-                  ease: "easeOut"
+                  delay: index * 0.02,
+                  duration: 0.3,
                 }}
-                whileHover={{ 
-                  y: -8,
-                  transition: { duration: 0.2 }
-                }}
-                className="group relative bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl p-4 shadow-lg hover:shadow-2xl hover:shadow-cyan-500/30 transition-all duration-300 border border-cyan-500/20 hover:border-cyan-500"
+                className="group relative bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl p-4 shadow-lg md:hover:shadow-xl md:hover:shadow-cyan-500/20 transition-shadow duration-300 border border-cyan-500/20 md:hover:border-cyan-500"
               >
                 <div className="flex flex-col items-center space-y-2">
-                  <motion.div 
+                  <div 
                     className="p-2 rounded-lg transition-all duration-200 relative"
                     style={{ backgroundColor: `${skill.color}15` }}
-                    whileHover={{ scale: 1.1 }}
                   >
                     <skill.Icon 
-                      className="text-4xl transition-all duration-300 group-hover:drop-shadow-[0_0_15px_rgba(6,182,212,0.5)]" 
+                      className="text-4xl transition-colors duration-300" 
                       style={{ color: skill.color }}
                     />
-                  </motion.div>
-                  <span className="font-semibold text-sm text-white group-hover:text-cyan-400 transition-colors">{skill.name}</span>
+                  </div>
+                  <span className="font-semibold text-sm text-white md:group-hover:text-cyan-400 transition-colors">{skill.name}</span>
                 </div>
-                
-                {/* Animated border on hover */}
-                <motion.div 
-                  className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"
-                  style={{
-                    background: `linear-gradient(135deg, ${skill.color}30, transparent)`,
-                  }}
-                  animate={{
-                    backgroundPosition: ['0% 0%', '100% 100%'],
-                  }}
-                  transition={{
-                    duration: 3,
-                    repeat: Infinity,
-                    ease: "linear",
-                  }}
-                ></motion.div>
               </motion.div>
             ))}
           </div>
@@ -534,11 +502,7 @@ const ModernHeader = () => {
             className="text-center mb-16"
           >
             <h2 className="text-5xl md:text-6xl font-bold text-white mb-6">Featured Projects</h2>
-            <motion.div 
-              className="w-20 h-1 bg-gradient-to-r from-cyan-500 to-blue-600 mx-auto rounded-full"
-              animate={{ scaleX: [1, 1.5, 1] }}
-              transition={{ duration: 2, repeat: Infinity }}
-            ></motion.div>
+            <div className="w-20 h-1 bg-gradient-to-r from-cyan-500 to-blue-600 mx-auto rounded-full"></div>
             <p className="text-xl text-gray-300 mt-6">DevOps & Development Work</p>
           </motion.div>
 
@@ -546,40 +510,29 @@ const ModernHeader = () => {
             {projects.map((project, index) => (
               <motion.article
                 key={index}
-                initial={{ opacity: 0, y: 50, rotateX: -20 }}
-                whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ 
-                  delay: index * 0.1,
-                  type: "spring",
-                  stiffness: 100,
+                  delay: index * 0.05,
+                  duration: 0.3,
                 }}
-                whileHover={{ 
-                  y: -15,
-                  scale: 1.03,
-                  transition: { type: "spring", stiffness: 300 }
-                }}
-                className="group relative bg-gradient-to-br from-slate-800 to-slate-900 rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl hover:shadow-cyan-500/30 transition-all duration-500 border border-cyan-500/20 hover:border-cyan-500"
-                style={{ perspective: 1000 }}
+                className="group relative bg-gradient-to-br from-slate-800 to-slate-900 rounded-3xl overflow-hidden shadow-lg md:hover:shadow-xl md:hover:shadow-cyan-500/20 transition-shadow duration-300 border border-cyan-500/20 md:hover:border-cyan-500"
               >
                 <div className="relative h-64 overflow-hidden">
-                  <motion.img
+                  <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-full object-cover"
-                    whileHover={{ scale: 1.15 }}
-                    transition={{ duration: 0.6 }}
+                    className="w-full h-full object-cover md:group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent"></div>
                   
-                  {/* Animated overlay */}
-                  <motion.div
-                    className="absolute inset-0 bg-gradient-to-t from-cyan-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                  ></motion.div>
+                  {/* Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-cyan-500/0 md:group-hover:from-cyan-500/20 to-transparent transition-all duration-500"></div>
                 </div>
 
                 <div className="p-6 space-y-4 relative">
-                  <h3 className="text-2xl font-bold text-white group-hover:text-cyan-400 transition-colors">
+                  <h3 className="text-2xl font-bold text-white md:group-hover:text-cyan-400 transition-colors">
                     {project.title}
                   </h3>
                   <p className="text-gray-400 leading-relaxed">
@@ -588,44 +541,24 @@ const ModernHeader = () => {
                   
                   <div className="flex flex-wrap gap-2">
                     {project.tags.map((tag, i) => (
-                      <motion.span
+                      <span
                         key={i}
-                        whileHover={{ scale: 1.1 }}
-                        className="px-3 py-1 bg-cyan-500/10 text-cyan-400 text-sm rounded-full border border-cyan-500/30 hover:border-cyan-500 transition-all"
+                        className="px-3 py-1 bg-cyan-500/10 text-cyan-400 text-sm rounded-full border border-cyan-500/30 md:hover:border-cyan-500 transition-colors"
                       >
                         {tag}
-                      </motion.span>
+                      </span>
                     ))}
                   </div>
 
-                  <motion.a
+                  <a
                     href={project.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    whileHover={{ x: 5 }}
-                    className="inline-flex items-center gap-2 text-cyan-400 font-semibold hover:gap-3 transition-all duration-300"
+                    className="inline-flex items-center gap-2 text-cyan-400 font-semibold md:hover:gap-3 transition-all duration-300"
                   >
                     View Project <HiArrowRight />
-                  </motion.a>
+                  </a>
                 </div>
-
-                {/* Shine effect */}
-                <motion.div
-                  className="absolute inset-0 opacity-0 group-hover:opacity-100 pointer-events-none"
-                  initial={false}
-                  animate={{
-                    background: [
-                      'linear-gradient(45deg, transparent 30%, rgba(6, 182, 212, 0.1) 50%, transparent 70%)',
-                    ],
-                    backgroundPosition: ['-200% 0', '200% 0'],
-                  }}
-                  transition={{
-                    duration: 1.5,
-                    repeat: Infinity,
-                    repeatDelay: 0.5,
-                  }}
-                  style={{ backgroundSize: '200% 100%' }}
-                />
               </motion.article>
             ))}
           </div>
@@ -642,18 +575,14 @@ const ModernHeader = () => {
             className="text-center mb-16"
           >
             <h2 className="text-5xl md:text-6xl font-bold text-white mb-6">Get In Touch</h2>
-            <motion.div 
-              className="w-20 h-1 bg-gradient-to-r from-cyan-500 to-blue-600 mx-auto rounded-full"
-              animate={{ scaleX: [1, 1.5, 1] }}
-              transition={{ duration: 2, repeat: Infinity }}
-            ></motion.div>
+            <div className="w-20 h-1 bg-gradient-to-r from-cyan-500 to-blue-600 mx-auto rounded-full"></div>
             <p className="text-xl text-gray-300 mt-6">Let's work together on your next project</p>
           </motion.div>
 
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
             >
               <form ref={form} onSubmit={sendEmail} className="space-y-6">
@@ -720,8 +649,8 @@ const ModernHeader = () => {
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               className="relative flex justify-center items-center"
             >
@@ -733,53 +662,23 @@ const ModernHeader = () => {
                   initial={{ scale: 0 }}
                   whileInView={{ scale: 1 }}
                   viewport={{ once: true }}
-                  transition={{ type: "spring", stiffness: 100 }}
+                  transition={{ duration: 0.3 }}
                 >
-                  <motion.div
-                    className="relative"
-                    animate={{ y: [0, -10, 0] }}
-                    transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                  >
+                  <div className="relative">
                     <div className="w-32 h-32 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-3xl flex items-center justify-center shadow-2xl shadow-cyan-500/50">
                       <HiMail className="text-6xl text-white" />
                     </div>
-                    {/* Pulse rings */}
-                    <motion.div
-                      className="absolute inset-0 rounded-3xl border-4 border-cyan-400"
-                      animate={{
-                        scale: [1, 1.3, 1],
-                        opacity: [0.8, 0, 0.8],
-                      }}
-                      transition={{
-                        duration: 2,
-                        repeat: Infinity,
-                        ease: "easeOut",
-                      }}
-                    />
-                    <motion.div
-                      className="absolute inset-0 rounded-3xl border-4 border-blue-400"
-                      animate={{
-                        scale: [1, 1.5, 1],
-                        opacity: [0.6, 0, 0.6],
-                      }}
-                      transition={{
-                        duration: 2,
-                        repeat: Infinity,
-                        ease: "easeOut",
-                        delay: 0.5,
-                      }}
-                    />
-                  </motion.div>
+                  </div>
                 </motion.div>
 
                 {/* Floating Tech Icons Around */}
                 {[
                   { Icon: FaGitAlt, color: '#F05032', position: 'top-8 left-8', delay: 0 },
-                  { Icon: SiKubernetes, color: '#326CE5', position: 'top-12 right-12', delay: 0.3 },
-                  { Icon: FaDocker, color: '#2496ED', position: 'bottom-16 left-16', delay: 0.6 },
-                  { Icon: SiTerraform, color: '#7B42BC', position: 'bottom-12 right-8', delay: 0.9 },
-                  { Icon: FaPython, color: '#3776AB', position: 'top-1/2 left-4', delay: 0.2 },
-                  { Icon: FaReact, color: '#61DAFB', position: 'top-1/2 right-4', delay: 0.5 },
+                  { Icon: SiKubernetes, color: '#326CE5', position: 'top-12 right-12', delay: 0.1 },
+                  { Icon: FaDocker, color: '#2496ED', position: 'bottom-16 left-16', delay: 0.2 },
+                  { Icon: SiTerraform, color: '#7B42BC', position: 'bottom-12 right-8', delay: 0.3 },
+                  { Icon: FaPython, color: '#3776AB', position: 'top-1/2 left-4', delay: 0.15 },
+                  { Icon: FaReact, color: '#61DAFB', position: 'top-1/2 right-4', delay: 0.25 },
                 ].map((item, index) => (
                   <motion.div
                     key={index}
@@ -787,15 +686,7 @@ const ModernHeader = () => {
                     initial={{ opacity: 0, scale: 0 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
-                    transition={{ delay: item.delay, type: "spring" }}
-                    animate={{
-                      y: [0, -15, 0],
-                      rotate: [0, 10, -10, 0],
-                    }}
-                    transition={{
-                      y: { duration: 3 + index * 0.5, repeat: Infinity, ease: "easeInOut" },
-                      rotate: { duration: 4, repeat: Infinity, ease: "easeInOut" },
-                    }}
+                    transition={{ delay: item.delay, duration: 0.3 }}
                   >
                     <div 
                       className="w-16 h-16 rounded-2xl flex items-center justify-center shadow-lg backdrop-blur-sm"
